@@ -1,0 +1,7 @@
+id,nome,preco,categoria
+1,Notebook,3500.00,Informatica
+2,Smartphone,2200.00,Telefonia
+3,Mouse,80.00,Informatica
+4,Teclado,150.00,Informatica
+5,Fone Bluetooth,250.00,Audio
+6,Monitor,1200.00,Informatica
