@@ -1,67 +1,65 @@
-
 # Análise de Clientes com Neo4j
 
 ## Sobre o projeto
 
-Este projeto tem como objetivo desenvolver um banco de dados orientado a grafos utilizando Neo4j e Cypher, simulando um cenário de comércio eletrônico.
+Este projeto apresenta a construção de um banco de dados orientado a grafos utilizando **Neo4j** e **Cypher**, com foco na análise de clientes, produtos, pedidos, categorias e devoluções.
 
-A proposta é representar clientes, produtos, pedidos, categorias e devoluções por meio de nós e relacionamentos, permitindo realizar consultas e análises sobre o comportamento dos clientes e o desempenho dos produtos.
+O objetivo é demonstrar como os relacionamentos entre diferentes informações podem facilitar consultas e análises de dados comerciais.
 
 ## Tecnologias utilizadas
 
-- Neo4j
+- Neo4j Aura
 - Cypher Query Language
 - GitHub
-- Arquivos CSV
 
 ## Modelagem do grafo
 
-O banco de dados utiliza os seguintes nós:
+O banco de dados foi desenvolvido com cinco tipos de nós:
 
-- Cliente
-- Produto
-- Pedido
-- Categoria
-- Devolucao
+| Nó | Descrição |
+|---|---|
+| Cliente | Informações dos clientes |
+| Produto | Produtos comercializados |
+| Pedido | Pedidos realizados |
+| Categoria | Classificação dos produtos |
+| Devolucao | Registros de devoluções |
 
 ### Relacionamentos
 
-- Cliente - REALIZOU -> Pedido
-- Pedido - CONTEM -> Produto
-- Produto - PERTENCE_A -> Categoria
-- Cliente - SOLICITOU -> Devolucao
-- Devolucao - REFERENTE_A -> Produto
+- `REALIZOU`: conecta clientes aos pedidos.
+- `CONTEM`: conecta pedidos aos produtos.
+- `PERTENCE_A`: conecta produtos às categorias.
+- `SOLICITOU`: conecta clientes às devoluções.
+- `REFERENTE_A`: conecta devoluções aos produtos.
 
-## Estrutura do projeto
+## Estrutura do banco
 
-```text
-neo4j-analise-clientes/
-├── README.md
-├── dataset/
-│   ├── clientes.csv
-│   ├── produtos.csv
-│   ├── pedidos.csv
-│   └── devolucoes.csv
-└── cypher/
-    ├── 01_criacao_nos.cypher
-    ├── 02_relacionamentos.cypher
-    └── 03_consultas.cypher
-```
+O grafo desenvolvido possui:
 
-## Análises propostas
+- 24 nós;
+- 29 relacionamentos;
+- 5 tipos de nós;
+- 5 tipos de relacionamentos.
 
-O projeto permite investigar:
+## Consultas e análises
 
-- Produtos mais presentes nos pedidos.
-- Clientes com maior volume de compras.
-- Valor total de pedidos por cliente.
-- Produtos com maior número de devoluções.
-- Distribuição de produtos por categoria.
+Foram desenvolvidas consultas em Cypher para:
 
-## Objetivo de aprendizagem
+1. Identificar os produtos mais vendidos.
+2. Analisar os clientes que mais gastaram.
+3. Identificar os produtos com maior quantidade de devoluções.
+4. Consultar os relacionamentos entre clientes, pedidos e produtos.
 
-Aplicar conceitos de bancos de dados orientados a grafos, modelagem de dados, relacionamentos e consultas Cypher, desenvolvendo conhecimentos práticos em análise de dados com Neo4j.
+## Evidências
 
-## Autor
+As capturas de tela da execução e visualização do projeto estão disponíveis na pasta `evidencias`.
 
-Gabriel Correa
+## Aprendizados
+
+Durante o desenvolvimento, foram explorados conceitos de bancos de dados orientados a grafos, criação de nós, propriedades, relacionamentos e consultas utilizando Cypher.
+
+O projeto também proporcionou uma experiência prática com Neo4j Aura e organização de código e documentação utilizando GitHub.
+
+---
+
+**Projeto desenvolvido para fins educacionais e de portfólio.**
